@@ -1,5 +1,4 @@
 
-Markdown
 # 🔒 Face Blur Privacy Tool
 
 ![Python](https://img.shields.io/badge/Python-3.11.9-blue?style=for-the-badge&logo=python)
@@ -38,21 +37,32 @@ Ensure your project folder is organized like this:
 ```text
 Face-Blur-Tool/
 │
-├── app.py              # Main Streamlit application code
-├── processor.py        # Logic for Face Detection and Blurring
-├── requirements.txt    # List of dependencies
-└── README.md           # Project documentation
-🚀 Installation & Setup
-Follow these steps to run the project locally.```
+├── app.py              
+├── processor.py        
+├── requirements.txt    
+└── README.md         
 
-## 1. Clone the Repository
-Bash
-git clone [https://github.com/ashfak99/Face-Blur-Tool.git](https://github.com/ashfak99/Face-Blur-Tool.git)
-cd Face-Blur-Tool
-2. Set up a Virtual Environment (Recommended)
-Target Python Version: 3.11.9
+```
 
-Bash
+---
+
+## 🚀 Installation & Setup
+
+Follow these steps to run the project locally.
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/ashfak99/Face-Blur-System.git
+cd Face-Blur-System
+
+```
+
+### 2. Set up a Virtual Environment (Recommended)
+
+Target Python Version: **3.11.9**
+
+```bash
 # Windows
 python -m venv venv
 venv\Scripts\activate
@@ -60,12 +70,16 @@ venv\Scripts\activate
 # Mac/Linux
 python3 -m venv venv
 source venv/bin/activate
-3. Install Dependencies
-Create a requirements.txt file with the contents below, then run the install command.
 
-requirements.txt content:
+```
 
-Plaintext
+### 3. Install Dependencies
+
+Create a `requirements.txt` file with the contents below, then run the install command.
+
+**requirements.txt content:**
+
+```text
 streamlit
 opencv-python
 mediapipe
@@ -73,41 +87,46 @@ numpy
 Pillow
 requests
 streamlit-lottie
-Install command:
 
-Bash
+```
+
+**Install command:**
+
+```bash
 pip install -r requirements.txt
-4. Run the Application
-Bash
+
+```
+
+### 4. Run the Application
+
+```bash
 streamlit run app.py
-🧩 How to Use
-Launch the app using the command above.
 
-Upload an image (JPG, JPEG, PNG) from the sidebar.
+```
 
-Adjust the "Blur Intensity" slider (0 to 100).
+---
 
-Click the "Process Image" button.
+## 🧩 How to Use
 
-Wait for the AI to detect faces.
+1. **Launch** the app using the command above.
+2. **Upload** an image (JPG, JPEG, PNG) from the sidebar.
+3. **Adjust** the "Blur Intensity" slider (0 to 100).
+4. Click the **"Process Image"** button.
+5. Wait for the AI to detect faces.
+6. **Preview** the result and click **"Download Image"** to save it.
 
-Preview the result and click "Download Image" to save it.
+---
 
-👨‍💻 Developer
-Created by Ashfak Alam
+## 👨‍💻 Developer
 
-LinkedIn Profile
+Created by **Ashfak Alam**
 
-GitHub Profile
+* [LinkedIn Profile](https://www.linkedin.com/in/ashfak-alam/)
+* [GitHub Profile](https://github.com/ashfak99)
 
-📜 License
+---
+
+## 📜 License
+
 This project is open-source and available for educational purposes.
 
-
-### Note for you (Developer):
-Code structure ko sahi karne ke liye, ensure karein ki aapke paas folder mein 2 files alag-alag hon:
-
-1.  **`app.py`**: Isme wo code dalein jo `import streamlit as slt` se shuru hota hai.
-2.  **`processor.py`**: Isme wo code dalein jo `import cv2` aur `def detectAndBlur...` contain karta hai.
-
-Agar aapne abhi tak files alag nahi ki hain, to `app.py` ke top par `from processor import detectAndBlur` line tabhi kaam karegi jab `processor.py` file same folder mein existing hogi.
