@@ -1,3 +1,7 @@
 .venv/
 __pycache__/
 14ash.jpg
+people.avif
+imagedownload.py
+test_image.jpg
+test.py

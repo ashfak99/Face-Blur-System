@@ -3,6 +3,8 @@ from PIL import Image, ImageFilter
 import io
 import requests
 from streamlit_lottie import st_lottie
+from processor import detectAndBlur
+import cv2
 
 slt.set_page_config(page_title="Face Blur Tool", layout="centered", page_icon="🔒")
 
@@ -44,13 +46,15 @@ if imageUser is not None:
 
         with col2:
             slt.subheader("Blurred Result")
-            blur_radius = intensity / 5
-            blurred_image = image.filter(ImageFilter.GaussianBlur(radius=blur_radius))
-            
-            slt.image(blurred_image, caption="Privacy Protected", width="stretch")
+            imageUser.seek(0) 
+            blurred_image,count = detectAndBlur(imageUser,intensity)
+            display_img = cv2.cvtColor(blurred_image, cv2.COLOR_BGR2RGB)
+            slt.image(display_img, caption="Privacy Protected", width="stretch")
+
+            final_pil_image = Image.fromarray(display_img)
 
             buf = io.BytesIO()
-            blurred_image.save(buf, format="PNG")
+            final_pil_image.save(buf, format="PNG")
             byte_im = buf.getvalue()
 
             slt.download_button(
